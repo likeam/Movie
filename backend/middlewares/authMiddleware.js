@@ -25,3 +25,15 @@ const authenticate = asyncHandler(async (req, res, next) => {
     throw new Error("Not authorized, token failed");
   }
 });
+
+//Check if user is Admin or not
+
+const authorizeAdmin = (req, res, next) => {
+  if (req.user && req.user.isAdmin) {
+    next();
+  } else {
+    res.status(401).send("Not Authorized as an Admin");
+  }
+};
+
+export { authenticate, authorizeAdmin };
