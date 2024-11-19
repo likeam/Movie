@@ -14,6 +14,8 @@ import Login from "./pages/Auth/Login.jsx";
 import Register from "./pages/Auth/Register.jsx";
 import PrivateRooute from "./pages/Auth/PrivateRooute.jsx";
 import Profile from "./pages/User/Profile.jsx";
+import AdminRoute from "./pages/Admin/AdminRoute.jsx";
+import GenreList from "./pages/Admin/GenreList.jsx";
 
 //     Auth //
 
@@ -28,6 +30,9 @@ const router = createBrowserRouter(
 
       <Route path="" element={<PrivateRooute />}>
         <Route path="/profile" element={<Profile />} />
+      </Route>
+      <Route path="" element={<AdminRoute />}>
+        <Route path="/admin/movies/genre" element={<GenreList />} />
       </Route>
     </Route>
   )
