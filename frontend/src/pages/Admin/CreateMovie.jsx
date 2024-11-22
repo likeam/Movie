@@ -4,7 +4,7 @@ import {
   useCreateMovieMutation,
   useUploadImageMutation,
 } from "../../redux/api/movies";
-import { useFetchGenresQuery } from "../../redux/api/genre";
+import { useFetchGenreQuery } from "../../redux/api/genre";
 import { toast } from "react-toastify";
 
 const CreateMovie = () => {
@@ -32,7 +32,7 @@ const CreateMovie = () => {
     { isLoading: isUploadingImage, error: uploadImageErrorDetails },
   ] = useUploadImageMutation();
 
-  const { data: genres, isLoading: isLoadingGenres } = useFetchGenresQuery();
+  const { data: genres, isLoading: isLoadingGenres } = useFetchGenreQuery();
 
   useEffect(() => {
     if (genres) {
@@ -115,9 +115,11 @@ const CreateMovie = () => {
 
         toast.success("Movie Added To Database");
       }
-    } catch (error) {
-      console.error("Failed to create movie: ", createMovieErrorDetail);
-      toast.error(`Failed to create movie: ${createMovieErrorDetail?.message}`);
+    } catch (err) {
+      console.error("Failed to create movie: ", err, createMovieErrorDetail);
+      toast.error(
+        `Failed to create movie:  ${createMovieErrorDetail?.message}`
+      );
     }
   };
 
