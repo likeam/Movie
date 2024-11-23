@@ -27,7 +27,7 @@ export const genreApiSlice = apiSlice.injectEndpoints({
     }),
 
     fetchGenre: builder.query({
-      query: () => `${GENRE_URL}/gener`,
+      query: () => `${GENRE_URL}/genres`,
     }),
   }),
 });

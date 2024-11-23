@@ -35,13 +35,14 @@ const getSpecificMovie = async (req, res) => {
 const updateMovie = async (req, res) => {
   try {
     const { id } = req.params;
-    const updateMovie = await Movie.findByIdAndUpdate(id, req.body, {
+    const updatedMovie = await Movie.findByIdAndUpdate(id, req.body, {
       new: true,
     });
-    if (!updateMovie) {
-      return res.status(404).json({ message: "Movie not Found" });
+
+    if (!updatedMovie) {
+      return res.status(404).json({ message: "Movie not found" });
     }
-    res.json(updateMovie);
+    res.json(updatedMovie);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
