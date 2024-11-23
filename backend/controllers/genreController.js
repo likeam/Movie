@@ -71,8 +71,7 @@ const listGenres = asyncHandler(async (req, res) => {
 
 const readGenre = asyncHandler(async (req, res) => {
   try {
-    const { id } = req.params.id;
-    const genre = await Genre.findOne({ _id: id });
+    const genre = await Genre.findOne({ _id: req.params.id });
     res.json(genre);
   } catch (error) {
     console.log(error);

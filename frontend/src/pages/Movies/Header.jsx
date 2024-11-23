@@ -1,4 +1,4 @@
-import SliderUtil from "../../../../backend/SliderUtil";
+import SliderUtil from "../../component/SliderUtil";
 import { useGetNewMoviesQuery } from "../../redux/api/movies";
 import { Link } from "react-router-dom";
 

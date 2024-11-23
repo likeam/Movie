@@ -51,15 +51,15 @@ export const moviesApiSlice = apiSlice.injectEndpoints({
     }),
 
     getNewMovies: builder.query({
-      query: () => `${MOVIE_URL}/new-movie`,
+      query: () => `${MOVIE_URL}/new-movies`,
     }),
 
     getTopMovies: builder.query({
-      query: () => `${MOVIE_URL}/top-movie`,
+      query: () => `${MOVIE_URL}/top-movies`,
     }),
 
     getRandomMovies: builder.query({
-      query: () => `${MOVIE_URL}/random-movie`,
+      query: () => `${MOVIE_URL}/random-movies`,
     }),
 
     uploadImage: builder.mutation({

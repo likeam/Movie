@@ -19,6 +19,8 @@ import GenreList from "./pages/Admin/GenreList.jsx";
 import CreateMovie from "./pages/Admin/CreateMovie.jsx";
 import AdminMovieList from "./pages/Admin/AdminMovieList";
 import UpdateMovie from "./pages/Admin/UpdateMovie.jsx";
+import AllMovies from "./pages/Movies/AllMovies.jsx";
+import MovieDetails from "./pages/Movies/MovieDetails.jsx";
 
 //     Auth //
 
@@ -30,6 +32,8 @@ const router = createBrowserRouter(
       <Route index={true} path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/movies" element={<AllMovies />} />
+      <Route path="/movies/:id" element={<MovieDetails />} />
 
       <Route path="" element={<PrivateRooute />}>
         <Route path="/profile" element={<Profile />} />
