@@ -17,6 +17,8 @@ const MovieDetails = () => {
   const [createReview, { isLoading: loadingMovieReview }] =
     useAddMovieReviewMutation();
 
+  console.log(movieId);
+
   const submitHandler = async (e) => {
     e.preventDefault();
 
@@ -70,7 +72,7 @@ const MovieDetails = () => {
 
             <div>
               {movie?.cast.map((c) => (
-                <ul key={c._id}>
+                <ul key={c.id}>
                   <li className="mt-[1rem]">{c}</li>
                 </ul>
               ))}

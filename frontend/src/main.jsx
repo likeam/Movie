@@ -21,6 +21,8 @@ import AdminMovieList from "./pages/Admin/AdminMovieList";
 import UpdateMovie from "./pages/Admin/UpdateMovie.jsx";
 import AllMovies from "./pages/Movies/AllMovies.jsx";
 import MovieDetails from "./pages/Movies/MovieDetails.jsx";
+import AllComment from "./pages/Admin/AllComment.jsx";
+import AdminDashboard from "./pages/Admin/Dashboard/AdminDashboard.jsx";
 
 //     Auth //
 
@@ -44,6 +46,8 @@ const router = createBrowserRouter(
         <Route path="/admin/movies/create" element={<CreateMovie />} />
         <Route path="/admin/movies-list" element={<AdminMovieList />} />
         <Route path="/admin/movies/update/:id" element={<UpdateMovie />} />
+        <Route path="/admin/movies/comments" element={<AllComment />} />
+        <Route path="/admin/movies/dashboard" element={<AdminDashboard />} />
       </Route>
     </Route>
   )
